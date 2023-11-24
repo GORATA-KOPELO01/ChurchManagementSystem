@@ -1,0 +1,21 @@
+<form method="POST" action="{% url 'send_message' %}">
+    {% csrf_token %}
+    <label for="sender">Sender:</label>
+    <select name="sender_id" id="sender">
+      {% for staff in staff %}
+        <option value="{{ staff.id }}">{{ staff.name }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="receiver">Receiver:</label>
+    <select name="receiver_id" id="receiver">
+      {% for member in members %}
+        <option value="{{ member.id }}">{{ member.name }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="content">Message:</label>
+    <textarea name="content" id="content" rows="5" cols="30"></textarea>
+    <br>
+    <input type="submit" value="Send">
+  </form>

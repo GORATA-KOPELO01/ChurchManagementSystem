@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Donation History</h1>
+  <ul>
+    {% for donation in donations %}
+      <li>{{ donation }}</li>
+    {% empty %}
+      <li>No donations found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

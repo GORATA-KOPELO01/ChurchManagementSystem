@@ -1,0 +1,6 @@
+<h2>Upcoming Birthdays</h2>
+            <ul>
+                {% for member in upcoming_birthdays %}
+                    <li>{{ member.user.first_name }} {{ member.user.last_name }} {{member.user.user_info.birth_date}}</li>
+                {% endfor %}
+            </ul>
